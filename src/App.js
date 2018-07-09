@@ -14,10 +14,7 @@ class App extends Component {
         </header>
         <CustomNavbar></CustomNavbar>
         <Routes></Routes>
-        
       </div>
-
-
     );
   }
 }
