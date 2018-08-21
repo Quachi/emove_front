@@ -21,5 +21,45 @@ yarn-debug.log*
 yarn-error.log*
 
 # ide
-/.idea
 /.vscode
+
+
+# Symfony Ignored files
+var/bootstrap.php.cache
+var/cache/*
+!var/cache/.gitkeep
+app/config/parameters.yml
+var/logs/*
+!var/logs/.gitkeep
+var/sessions/*
+!var/sessions/.gitkeep
+var/imports/*
+!var/imports/.gitkeep
+/vendor/
+sftp/data/*
+
+# OS or Editor folders
+.DS_Store
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+.idea
+/assets_src/.idea
+
+# Infrastructure Ignored files
+.env
+.php_cs.cache
+infrastructure/common
+
+# Assets Ignored files
+web/bundles/
+web/uploads/*
+!web/uploads/.gitkeep
+web/assets/
+
+#Builds Ignored files
+bundle/
+yarn-error.log
+
