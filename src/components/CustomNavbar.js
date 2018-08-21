@@ -41,6 +41,10 @@ class CustomNavbar extends Component {
               <Button type="submit">Connection</Button>
             </Navbar.Form>
           </NavDropdown>
+
+          <NavItem eventKey={4} href="agencies">
+            Agence
+          </NavItem>
           
         </Nav>
       </Navbar >
