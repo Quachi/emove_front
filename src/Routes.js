@@ -8,6 +8,8 @@ import Register from './components/Register';
 import RentCar from './components/RentCar';
 import RentScoot from './components/RentScoot';
 import Vehicule from './components/Vehicule';
+import Agencies from './components/Agencies';
+import Agency from './components/Agency';
 
 class Routes extends Component {
   render() {
@@ -20,6 +22,10 @@ class Routes extends Component {
         <Location path="/rent-car" handler={RentCar} />
         <Location path="/rent-scoot" handler={RentScoot} />
         <Location path="/vehicule" handler={Vehicule} />
+
+        <Location path="/agencies" handler={Agencies} />
+        <Location path="/agencies/:id" handler={Agency} />
+
         <NotFound handler={NotFoundPage} />
       </Locations>
     );
