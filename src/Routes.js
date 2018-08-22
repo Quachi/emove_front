@@ -5,9 +5,11 @@ import NotFoundPage from './NotFoundPage'
 import Home from './components/Home';
 import MyAccount from './components/MyAccount';
 import Register from './components/Register';
-import RentCar from './components/RentCar';
+import ListCars from './components/ListCars';
 import RentScoot from './components/RentScoot';
 import Vehicule from './components/Vehicule';
+import Agency from './components/Agency';
+import DetailVehicule from './components/DetailVehicule';
 
 class Routes extends Component {
   render() {
@@ -17,9 +19,11 @@ class Routes extends Component {
         <Location path="/login" handler={Login} />
         <Location path="/account" handler={MyAccount} />
         <Location path="/register" handler={Register} />
-        <Location path="/rent-car" handler={RentCar} />
+        <Location path="/rent-car" handler={ListCars} />
         <Location path="/rent-scoot" handler={RentScoot} />
         <Location path="/vehicule" handler={Vehicule} />
+        <Location path="/agencies" handler={Agency} />
+        <Location path="/detail/:id" handler={DetailVehicule} />
         <NotFound handler={NotFoundPage} />
       </Locations>
     );

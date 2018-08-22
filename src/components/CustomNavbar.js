@@ -31,6 +31,9 @@ class CustomNavbar extends Component {
           <NavItem eventKey={3} href="login">
             connexion
           </NavItem>
+          <NavItem eventKey={4} href="agencies">
+            Agence
+          </NavItem>
         </Nav>
       </Navbar >
     );
