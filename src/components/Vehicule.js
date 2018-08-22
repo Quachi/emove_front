@@ -3,9 +3,15 @@ import { Grid, Col, Button} from 'react-bootstrap'
 import '../App.css'
 
 class Vehicule extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    constructor(props) {
+        super(props);
+    }
+
+    redirect = () => {
+        console.log(this.props.id)
+        this.props.history.push('/detail/1')
+    }
+    
     render() {
         return (
             <div className="Vehicule">
@@ -29,7 +35,7 @@ class Vehicule extends Component {
                         <div className="price-by-day">
                             {this.props.priceDay}€ par jour
                         </div>
-                        <Button>Reserver</Button>
+                        <Button href="detail/">Reserver</Button>
                     </Col>
                 </Grid>
             </div>
