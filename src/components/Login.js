@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Request from 'superagent';
+import _ from 'lodash';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 export default class Login extends Component {
@@ -22,8 +24,28 @@ export default class Login extends Component {
   }
 
   handleSubmit = event => {
-    event.preventDefault();
-  }
+      event.preventDefault();
+      let url      = "http://localhost:8080/api/auth-tokens";
+      let login    = event.target.email.value;
+      let password = event.target.password.value;
+
+
+      Request
+          .post(url)
+          .auth('ipssi', 'ipssi')
+          .send('login='+login)
+          .send('password='+password)
+          .then((response) => {
+        console.log(response.body.value);
+              this.setState({
+              })
+          })
+          .catch((error) => {
+              console.log(error);
+              alert("username password do not match")
+          });
+
+  };
 
   render() {
     return (
