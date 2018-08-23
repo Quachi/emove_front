@@ -4,31 +4,45 @@ import _ from 'lodash';
 
 class Agency extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {};
+
+    var url = "http://localhost:8080/api/agency/" + this.props.id;
+    Request
+        .get(url)
+        .auth('ipssi', 'ipssi')
+        .then((response) => {
+          this.setAgencyState(response.body);
+    })  
   }
 
-  componentDidMount(){
-    var url = "http://localhost:8080/api/agencies";
-    Request
-    .get(url)
-    .auth('ipssi', 'ipssi')
-    .then((response) => {
-        this.setState({
-        agencies: response.body
-      })
+  setAgencyState(agency){
+    this.setState({
+      agencyName : agency.name,
+      agencyPostalCode : agency.postal_code,
+      agencyCity : agency.city,
+      agencyVehicles: agency.vehicles
     })
   }
 
   render() {
-    var agencies = _.map(this.state.agencies ,(agency) => {
-      return <li> {agency.name} </li>;
+
+    var vehicles = _.map(this.state.agencyVehicles ,(vehicle) => {
+      return <a href={"/car/" + vehicle.id}> 
+        <p> {vehicle.brand} - {vehicle.model} </p>
+      </a>;
     });
+
     return (
-      <div className="Home">
-        <h1>Agencies</h1>
-        { agencies }
+      <div>
+        <h2> {this.state.agencyName} </h2>
+        <ul>
+          <li> Postal code : {this.state.agencyPostalCode} </li>
+          <li> City: {this.state.agencyCity} </li>
+        </ul>
+        <h3> Vehicles : </h3>
+        {vehicles}        
       </div>
     );
   }

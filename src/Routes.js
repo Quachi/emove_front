@@ -22,7 +22,10 @@ class Routes extends Component {
         <Location path="/rent-car" handler={ListCars} />
         <Location path="/rent-scoot" handler={RentScoot} />
         <Location path="/vehicule" handler={Vehicule} />
+        <Location path="/vehicle/add" handler={VehicleAdd} />
+        <Location path="/scooters" handler={ListScooter} />
         <Location path="/agencies" handler={Agency} />
+        <Location path="/agencies/:id" handler={Agency} />
         <Location path="/detail/:id" handler={DetailVehicule} />
         <NotFound handler={NotFoundPage} />
       </Locations>

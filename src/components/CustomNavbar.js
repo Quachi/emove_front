@@ -22,18 +22,30 @@ class CustomNavbar extends Component {
         </Navbar.Header>
         <Nav pullRight>
           <NavDropdown eventKey={3} title="Louez un vehicule" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1} href="rent-scoot">Scooter</MenuItem>
-            <MenuItem eventKey={3.2} href="rent-car">Voiture</MenuItem>s
+            <MenuItem eventKey={3.1} href="/scooters">Scooter</MenuItem>
+            <MenuItem eventKey={3.2} href="/rent-car">Voiture</MenuItem>
+            {/* <MenuItem eventKey={3.3}>Something else here</MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey={3.4}>Separated link</MenuItem> */}
           </NavDropdown>
-          <NavItem eventKey={2} href="register">
+          <NavItem eventKey={2} href="/register">
             Inscription
           </NavItem>
-          <NavItem eventKey={3} href="login">
-            connexion
+
+          <NavDropdown eventKey={1} title="Connection" id="login">
+            <Navbar.Form >
+              <FormGroup>
+                <FormControl type="text" placeholder="Email" />
+                <FormControl type="password" placeholder="Password" />
+              </FormGroup>{' '}
+              <Button type="submit">Connection</Button>
+            </Navbar.Form>
+          </NavDropdown>
+
+          <NavItem eventKey={4} href="/agencies">
+            Agences
           </NavItem>
-          <NavItem eventKey={4} href="agencies">
-            Agence
-          </NavItem>
+          
         </Nav>
       </Navbar >
     );
