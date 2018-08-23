@@ -10,6 +10,10 @@ import RentScoot from './components/RentScoot';
 import Vehicule from './components/Vehicule';
 import Agency from './components/Agency';
 import DetailVehicule from './components/DetailVehicule';
+import ListScooter from './components/ListScooter';
+import Agencies from './components/Agencies';
+import VehicleAdd from './components/VehicleAdd';
+
 
 class Routes extends Component {
   render() {
@@ -24,7 +28,7 @@ class Routes extends Component {
         <Location path="/vehicule" handler={Vehicule} />
         <Location path="/vehicle/add" handler={VehicleAdd} />
         <Location path="/scooters" handler={ListScooter} />
-        <Location path="/agencies" handler={Agency} />
+        <Location path="/agencies" handler={Agencies} />
         <Location path="/agencies/:id" handler={Agency} />
         <Location path="/detail/:id" handler={DetailVehicule} />
         <NotFound handler={NotFoundPage} />

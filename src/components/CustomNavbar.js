@@ -31,16 +31,7 @@ class CustomNavbar extends Component {
           <NavItem eventKey={2} href="/register">
             Inscription
           </NavItem>
-
-          <NavDropdown eventKey={1} title="Connection" id="login">
-            <Navbar.Form >
-              <FormGroup>
-                <FormControl type="text" placeholder="Email" />
-                <FormControl type="password" placeholder="Password" />
-              </FormGroup>{' '}
-              <Button type="submit">Connection</Button>
-            </Navbar.Form>
-          </NavDropdown>
+          <MenuItem eventKey={4} href="/login">Connection</MenuItem>
 
           <NavItem eventKey={4} href="/agencies">
             Agences
