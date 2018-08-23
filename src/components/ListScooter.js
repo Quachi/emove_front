@@ -23,7 +23,7 @@ class ListScooter extends Component {
   render() {
 
     var output = _.map(this.state.scooters ,(scooter) => {
-      return <a href={"/vehicule/" + scooter.id}> 
+      return <a href={"/detail/" + scooter.id}> 
         <p> {scooter.brand} - {scooter.model} </p>
       </a>;
     });
