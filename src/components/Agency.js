@@ -29,7 +29,7 @@ class Agency extends Component {
   render() {
 
     var vehicles = _.map(this.state.agencyVehicles ,(vehicle) => {
-      return <a href={"/car/" + vehicle.id}> 
+      return <a href={"/detail/" + vehicle.id}> 
         <p> {vehicle.brand} - {vehicle.model} </p>
       </a>;
     });
