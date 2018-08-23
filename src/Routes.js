@@ -5,13 +5,15 @@ import NotFoundPage from './NotFoundPage'
 import Home from './components/Home';
 import MyAccount from './components/MyAccount';
 import Register from './components/Register';
-import RentCar from './components/RentCar';
-import RentScoot from './components/RentScoot';
-import Vehicule from './components/Vehicule';
+import ListScooter from './components/ListScooter';
 import Agencies from './components/Agencies';
 import Agency from './components/Agency';
+import VehicleAdd from './components/VehicleAdd';
+
 
 class Routes extends Component {
+
+  
   render() {
     return (
       <Locations>
@@ -19,9 +21,10 @@ class Routes extends Component {
         <Location path="/login" handler={Login} />
         <Location path="/account" handler={MyAccount} />
         <Location path="/register" handler={Register} />
-        <Location path="/rent-car" handler={RentCar} />
-        <Location path="/rent-scoot" handler={RentScoot} />
-        <Location path="/vehicule" handler={Vehicule} />
+
+        <Location path="/vehicle/add" handler={VehicleAdd} />
+
+        <Location path="/scooters" handler={ListScooter} />
 
         <Location path="/agencies" handler={Agencies} />
         <Location path="/agencies/:id" handler={Agency} />
